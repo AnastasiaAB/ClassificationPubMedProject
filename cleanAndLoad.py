@@ -1,4 +1,3 @@
-# %%
 """
 Step 2: Clean PubMed abstract data and load into SQLite.
  
@@ -12,9 +11,7 @@ Data quality issues found during EDA and how each is handled:
    cardio-oncology paper indexed under both Neoplasms and Cardiovascular
    Diseases). Since ground truth is genuinely ambiguous for a binary
    classifier, these are DROPPED rather than arbitrarily assigned a label.
-   This is worth a line in the README/write-up as a deliberate modeling
-   decision, not an oversight.
- 
+
 2. Truncated/corrupted abstracts (abstract length < MIN_ABSTRACT_LEN)
    A handful of abstracts were cut short during the pull (e.g. one is just
    "The"), almost certainly from special characters (Greek letters, math
@@ -101,4 +98,4 @@ def main():
 if __name__ == "__main__":
     main()
  
-# %%
+

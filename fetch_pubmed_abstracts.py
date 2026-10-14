@@ -1,9 +1,3 @@
-# %%
-import time
-import csv
-import xml.etree.ElementTree as ET
-import requests
-# %%
 """
 fetch_pubmed_abstracts.py
 
@@ -21,7 +15,12 @@ Notes:
 - NCBI asks that you set a real email/tool name so they can contact you
   if something in your usage looks off. Fill those in below.
 """
-# %%
+
+import time
+import csv
+import xml.etree.ElementTree as ET
+import requests
+
 # ---- Configuration ----------------------------------------------------
  
 NCBI_EMAIL = "asfokina@gmail.com"   # required by NCBI usage policy
@@ -38,7 +37,7 @@ OUTPUT_CSV = "pubmed_abstracts.csv"
  
 BASE_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 REQUEST_DELAY = 0.34                 # ~3 req/sec without an API key
-# %%
+
 # ---- Functions ----------------------------------------------------------
  
 def esearch_pmids(query: str, retmax: int) -> list[str]:
@@ -124,7 +123,7 @@ def fetch_category(query: str, label: str, n: int) -> list[dict]:
         time.sleep(REQUEST_DELAY)
  
     return all_records
-# %%
+
 def main():
     category_a_records = fetch_category(CATEGORY_A, "category_a", N_PER_CATEGORY)
     time.sleep(REQUEST_DELAY)
@@ -142,7 +141,7 @@ def main():
         writer.writerows(all_records)
  
     print(f"\nSaved to {OUTPUT_CSV}")
-# %%
+
 if __name__ == "__main__":
     main()
-# %%
+

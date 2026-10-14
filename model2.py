@@ -1,16 +1,12 @@
-# %%
 """
-Step 4a: Train the second model.
+Step 4: Train the second model.
 
 Model 2: TF-IDF -> TruncatedSVD (dense LSA embedding) -> HistGradientBoostingClassifier
 
 A deliberately different modeling approach from the baseline (sparse
 bag-of-words + linear model): this compresses the TF-IDF space into a
 dense, lower-dimensional semantic embedding and fits a nonlinear,
-tree-based ensemble on top. No internet access is available in this
-environment, so pretrained embeddings (BERT etc.) aren't an option --
-this is the most meaningfully "harder" comparison achievable with
-purely local, scikit-learn-native tools.
+tree-based ensemble on top.
 
 Uses the SAME train/test split and SAME CV fold assignments as
 baseline_model.py (same random_state) so results are directly comparable

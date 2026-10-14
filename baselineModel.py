@@ -1,9 +1,8 @@
-# %%
 """
 Step 3: Baseline model with cross-validation and confidence intervals.
 
 Model: TF-IDF (title + abstract) -> Logistic Regression
-Data:  pubmed.db (table `abstracts`, produced by clean_and_load.py)
+Data:  pubmed.db
 
 Methodology:
 - Hold out a stratified 20% test set up front and DO NOT touch it until
@@ -117,4 +116,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-# %%
