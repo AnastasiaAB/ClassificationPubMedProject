@@ -20,6 +20,7 @@ import time
 import csv
 import xml.etree.ElementTree as ET
 import requests
+from config import RAW_CSV
 
 # ---- Configuration ----------------------------------------------------
  
@@ -33,7 +34,7 @@ CATEGORY_A = "Neoplasms[MeSH Major Topic]"
 CATEGORY_B = "Cardiovascular Diseases[MeSH Major Topic]"
  
 N_PER_CATEGORY = 1500                # abstracts to pull per category
-OUTPUT_CSV = "pubmed_abstracts.csv"
+OUTPUT_CSV = RAW_CSV
  
 BASE_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 REQUEST_DELAY = 0.34                 # ~3 req/sec without an API key
